@@ -1,12 +1,13 @@
 <div align="center">
   <img width="225" src="https://cdn.rawgit.com/piotrmurach/strings/master/assets/strings_logo.png" alt="strings logo" />
 </div>
+
 # Strings::ANSI
 
 [![Gem Version](https://badge.fury.io/rb/strings-ansi.svg)][gem]
 [![Build Status](https://secure.travis-ci.org/piotrmurach/strings-ansi.svg?branch=master)][travis]
-[![Build status](https://ci.appveyor.com/api/projects/status/e11tn1fgjwnfwp3r?svg=true)][appveyor]
-[![Maintainability](https://api.codeclimate.com/v1/badges/4ca50e480f42af80678e/maintainability)][codeclimate]
+[![Build status](https://ci.appveyor.com/api/projects/status/amffv5g25m02yu9h?svg=true)][appveyor]
+[![Maintainability](https://api.codeclimate.com/v1/badges/7c018a761a342ccb0746/maintainability)][codeclimate]
 [![Coverage Status](https://coveralls.io/repos/github/piotrmurach/strings-ansi/badge.svg?branch=master)][coverage]
 [![Inline docs](http://inch-ci.org/github/piotrmurach/strings-ansi.svg?branch=master)][inchpages]
 
@@ -17,9 +18,9 @@
 [coverage]: https://coveralls.io/github/piotrmurach/strings-ansi?branch=master
 [inchpages]: http://inch-ci.org/github/piotrmurach/strings-ansi
 
-> Methods for processing ANSI escape codes in strings.
+> Handle ANSI escape codes in strings.
 
-**Strings::ANSI** provides ANSI processing utilites for [Strings](https://github.com/piotrmurach/strings)
+**Strings::ANSI** provides ANSI handling for [Strings](https://github.com/piotrmurach/strings) utilities.
 
 ## Installation
 
