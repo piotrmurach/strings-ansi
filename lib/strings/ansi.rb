@@ -63,7 +63,7 @@ module Strings
     #
     # @api public
     def only_ansi?(string)
-      !!(string =~ /^#{ANSI_MATCHER}$/)
+      !!(string =~ /^(#{ANSI_MATCHER})+$/)
     end
     module_function :only_ansi?
   end # ANSI
