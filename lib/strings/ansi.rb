@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require_relative "ansi/version"
+require_relative 'ansi/version'
 
 module Strings
   # Helper functions for handling ANSI escape sequences
   module ANSI
     # The control sequence indicator
-    CSI = "\033".freeze
+    CSI = "\033"
 
     # The code for reseting styling
-    RESET = "\e[0m".freeze
+    RESET = "\e[0m"
 
     # The regex to match ANSI codes
-    ANSI_MATCHER = '(\[)?\033(\[)?[;?\d]*[\dA-Za-z]([\];])?'.freeze
+    ANSI_MATCHER = '(\[)?\033(\[)?[;?\d]*[\dA-Za-z]([\];])?'
 
     # Remove ANSI characters from the text
     #
