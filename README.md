@@ -45,6 +45,7 @@ Or install it yourself as:
   * [2.1 ansi?](#21-ansi)
   * [2.2 only_ansi?](#22-only_ansi)
   * [2.3 strip_ansi](#23-strip_ansi)
+* [3. Extending String class](#3-extending-string-class)
 
 ## Usage
 
@@ -81,6 +82,39 @@ To strip ANSI codes from a string use `sanitize`:
 ```ruby
 Strings::ANSI.strip_ansi("\e[0;33;49mHello\e[0m")
 # => Hello
+```
+
+## 3. Extending String class
+
+Though it is highly discouraged to polute core Ruby classes, you can add the required methods to `String` class by using refinements.
+
+For example, if you wish to only extend strings with `strip_ansi` method do:
+
+```ruby
+module MyStringExt
+  refine String do
+    def strip_ansi
+      Strings::ANSI.strip_ansi(self)
+    end
+  end
+end
+```
+
+then `strip_ansi` method will be available for any strings where refinement is applied:
+
+```ruby
+using MyStringExt
+
+string.strip_ansi("\e[32mHello\e[0m")
+# => Hello
+```
+
+Alternatively, if you want to include all the **Strings::ANSI** methods:
+
+```ruby
+require 'strings/ansi/extensions'
+
+using Strings::ANSI::Extensions
 ```
 
 ## Development
