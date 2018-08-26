@@ -43,7 +43,8 @@ Or install it yourself as:
 * [1. Usage](#1-usage)
 * [2. API](#2-api)
   * [2.1 ansi?](#21-ansi)
-  * [2.2 sanitize](#22-sanitize)
+  * [2.2 only_ansi?](#22-only_ansi)
+  * [2.3 strip_ansi](#23-strip_ansi)
 
 ## Usage
 
@@ -64,13 +65,21 @@ Strings::ANSI.ansi?("\e[33;44mfoo\e[0m")
 # => true
 ```
 
-### 2.2 sanitize
+### 2.2 only_ansi?
+
+To check if a string includes only ANSI escape codes use `only_ansi?`:
+
+```ruby
+Strings::ANSI.only_ansi?("\e[33;44mfoo\e[0m")
+# => false
+```
+
+### 2.3 strip_ansi
 
 To strip ANSI codes from a string use `sanitize`:
 
 ```ruby
-
-Strings::ANSI.sanitize("\e[0;33;49mHello\e[0m")
+Strings::ANSI.strip_ansi("\e[0;33;49mHello\e[0m")
 # => Hello
 ```
 
