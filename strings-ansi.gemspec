@@ -5,7 +5,7 @@ require "strings/ansi/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "strings-ansi"
-  spec.version       = Strings::Ansi::VERSION
+  spec.version       = Strings::ANSI::VERSION
   spec.authors       = ["Piotr Murach"]
   spec.email         = [""]
 
