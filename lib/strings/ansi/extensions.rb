@@ -14,10 +14,9 @@ module Strings
           ANSI.only_ansi?(self)
         end
 
-        def strip_ansi
-          ANSI.strip_ansi(self)
+        def sanitize
+          ANSI.sanitize(self)
         end
-        alias sanitize strip_ansi
       end
     end # Extensions
   end # ANSI

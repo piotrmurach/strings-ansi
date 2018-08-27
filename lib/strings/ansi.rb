@@ -19,18 +19,15 @@ module Strings
     # @param [String] string
     #
     # @example
-    #   Strings::ANSI.strip_ansi("\e[33mfoo\[e0m")
+    #   Strings::ANSI.sanitize("\e[33mfoo\[e0m")
     #   # => "foo"
     #
     # @return [String]
     #
     # @api public
-    def strip_ansi(string)
+    def sanitize(string)
       string.gsub(/#{ANSI_MATCHER}/, '')
     end
-    module_function :strip_ansi
-
-    alias sanitize strip_ansi
     module_function :sanitize
 
     # Check if string contains ANSI codes

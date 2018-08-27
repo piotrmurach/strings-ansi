@@ -14,6 +14,6 @@ RSpec.describe Strings::ANSI::Extensions do
   end
 
   it "strips ansi codes" do
-    expect("\e[33mfoo\e[0m".strip_ansi).to eq('foo')
+    expect("\e[33mfoo\e[0m".sanitize).to eq('foo')
   end
 end

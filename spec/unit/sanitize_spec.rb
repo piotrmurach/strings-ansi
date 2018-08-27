@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Strings::ANSI, '#strip_ansi' do
+RSpec.describe Strings::ANSI, '#sanitize' do
   {
     "\e[20h" => '',
     "\e[?1h" => '',
@@ -13,12 +13,7 @@ RSpec.describe Strings::ANSI, '#strip_ansi' do
     "\e[0;33;49;3;9;4m\e[0m" => ''
   }.each do |code, expected|
     it "remove #{code.inspect} from string" do
-      expect(Strings::ANSI.strip_ansi(code)).to eq(expected)
+      expect(Strings::ANSI.sanitize(code)).to eq(expected)
     end
-  end
-
-  it "supports sanitize alias" do
-    string = "\e[32mfoo\e[0m"
-    expect(Strings::ANSI.sanitize(string)).to eq(Strings::ANSI.strip_ansi(string))
   end
 end
