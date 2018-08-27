@@ -14,9 +14,9 @@ module Strings
     # The regex to match ANSI codes
     ANSI_MATCHER = '(\[)?\033(\[)?[;?\d]*[\dA-Za-z]([\];])?'
 
-    # Remove ANSI characters from the text
+    # Return a copy of string with ANSI characters removed
     #
-    # @param [String] text
+    # @param [String] string
     #
     # @example
     #   Strings::ANSI.strip_ansi("\e[33mfoo\[e0m")
@@ -25,8 +25,8 @@ module Strings
     # @return [String]
     #
     # @api public
-    def strip_ansi(text)
-      text.gsub(/#{ANSI_MATCHER}/, '')
+    def strip_ansi(string)
+      string.gsub(/#{ANSI_MATCHER}/, '')
     end
     module_function :strip_ansi
 
