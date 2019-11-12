@@ -20,7 +20,7 @@
 
 > Handle ANSI escape codes in strings.
 
-**Strings::ANSI** provides ANSI handling for [Strings](https://github.com/piotrmurach/strings) utilities.
+**Strings::ANSI** provides ANSI handling component for [Strings](https://github.com/piotrmurach/strings).
 
 ## Installation
 
@@ -100,7 +100,7 @@ module MyStringExt
 end
 ```
 
-then `sanitize` method will be available for any strings where refinement is applied:
+This will make `sanitize` method available for any strings where refinement is applied:
 
 ```ruby
 using MyStringExt
