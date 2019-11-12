@@ -10,13 +10,15 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Methods for processing ANSI escape codes in strings.}
   spec.description   = %q{Methods for processing ANSI escape codes in strings.}
-  spec.homepage      = "https://github.com/piotrmurach/strings"
+  spec.homepage      = "https://github.com/piotrmurach/strings-ansi"
   spec.license       = "MIT"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
-  spec.metadata["changelog_uri"] = "https://github.com/piotrmurach/strings-case/blob/master/CHANGELOG.md"
+  spec.metadata["bug_tracker_uri"] = "https://github.com/piotrmurach/strings-ansi/issues"
+  spec.metadata["changelog_uri"] = "https://github.com/piotrmurach/strings-ansi/blob/master/CHANGELOG.md"
+  spec.metadata["documentation_uri"] = "https://www.rubydoc.info/gems/strings-ansi"
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/piotrmurach/strings-case"
+  spec.metadata["source_code_uri"] = "https://github.com/piotrmurach/strings-ansi"
 
   spec.files         = Dir["{lib,spec}/**/*.rb"]
   spec.files        += Dir["{bin,tasks}/*", "strings-ansi.gemspec"]
