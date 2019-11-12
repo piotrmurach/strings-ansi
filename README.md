@@ -49,10 +49,25 @@ Or install it yourself as:
 
 ## Usage
 
-The `Strings::ANSI` is a module with functions that can be called directly.
+The `Strings::ANSI` is a module that can check if a string has ANSI escape codes:
 
 ```ruby
-Strings::ANSI.ansi?('...')
+Strings::ANSI.ansi?("\e[32mHello\e[0m")
+# => true
+```
+
+It can also check if a string consists of only ANSI codes:
+
+```ruby
+Strings::ANSI.only_ansi?("\e[32mHello\e[0m")
+# => false
+```
+
+Finally, you can remove any ANSI codes from a string:
+
+```ruby
+Strings::ANSI.sanitize("\e[32mHello\e[0m")
+# => "Hello"
 ```
 
 ## 2. API
@@ -86,7 +101,7 @@ Strings::ANSI.sanitize("\e[0;33;49mHello\e[0m")
 
 ## 3. Extending String class
 
-Though it is highly discouraged to polute core Ruby classes, you can add the required methods to `String` class by using refinements.
+Though it is highly discouraged to pollute core Ruby classes, you can add the required methods to `String` class by using refinements.
 
 For example, if you wish to only extend strings with `sanitize` method do:
 
@@ -133,7 +148,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Strings::Ansi project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/piotrmurach/strings-ansi/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Strings::ANSI project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/piotrmurach/strings-ansi/blob/master/CODE_OF_CONDUCT.md).
 
 ## Copyright
 
