@@ -12,7 +12,7 @@ RSpec.describe Strings::ANSI, '#sanitize' do
     "\eA"    => '',
     "\e[0;33;49;3;9;4m\e[0m" => ''
   }.each do |code, expected|
-    it "remove #{code.inspect} from string" do
+    it "removes #{code.inspect} from string" do
       expect(Strings::ANSI.sanitize(code)).to eq(expected)
     end
   end

@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 if ENV['COVERAGE'] || ENV['TRAVIS']
   require 'simplecov'
   require 'coveralls'
 
-  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
     SimpleCov::Formatter::HTMLFormatter,
     Coveralls::SimpleCov::Formatter
-  ]
+  ])
 
   SimpleCov.start do
     command_name 'spec'
@@ -14,7 +16,7 @@ if ENV['COVERAGE'] || ENV['TRAVIS']
 end
 
 require "bundler/setup"
-require "strings/ansi"
+require "strings-ansi"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
