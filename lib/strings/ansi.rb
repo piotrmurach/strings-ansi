@@ -12,7 +12,12 @@ module Strings
     RESET = "\e[0m"
 
     # The regex to match ANSI codes
-    ANSI_MATCHER = '(\[)?\033(\[)?[;?\d]*[\dA-Za-z]([\];])?'
+    ANSI_MATCHER = %r{
+      (?>(\[)?\033(\[)?[;?\d]*[\dA-Za-z]([\];])?)
+      |
+      # hyperlink opening sequence
+      (?>\033\]8;[^;]*;.*?(\033\\|\07))
+    }x
 
     # Return a copy of string with ANSI characters removed
     #
@@ -26,7 +31,7 @@ module Strings
     #
     # @api public
     def sanitize(string)
-      string.gsub(/#{ANSI_MATCHER}/, '')
+      string.gsub(ANSI_MATCHER, '')
     end
     module_function :sanitize
 
@@ -43,7 +48,7 @@ module Strings
     #
     # @api public
     def ansi?(string)
-      !!(string =~ /#{ANSI_MATCHER}/)
+      !!(string =~ ANSI_MATCHER)
     end
     module_function :ansi?
 
@@ -63,7 +68,7 @@ module Strings
     #
     # @api public
     def only_ansi?(string)
-      !!(string =~ /^(#{ANSI_MATCHER})+$/)
+      !!(string =~ /\A(#{ANSI_MATCHER})+\z/)
     end
     module_function :only_ansi?
   end # ANSI
