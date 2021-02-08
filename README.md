@@ -1,18 +1,18 @@
 <div align="center">
-  <img width="225" src="https://github.com/piotrmurach/strings/blob/master/assets/strings_logo.png" alt="strings logo" />
+  <img width="225" src="https://github.com/piotrmurach/strings/blob/master/assets/strings_logo.png" alt="Strings logo" />
 </div>
 
 # Strings::ANSI
 
 [![Gem Version](https://badge.fury.io/rb/strings-ansi.svg)][gem]
-[![Build Status](https://secure.travis-ci.org/piotrmurach/strings-ansi.svg?branch=master)][travis]
+[![Actions CI](https://github.com/piotrmurach/strings-ansi/workflows/CI/badge.svg?branch=master)][gh_actions_ci]
 [![Build status](https://ci.appveyor.com/api/projects/status/amffv5g25m02yu9h?svg=true)][appveyor]
 [![Maintainability](https://api.codeclimate.com/v1/badges/7c018a761a342ccb0746/maintainability)][codeclimate]
 [![Coverage Status](https://coveralls.io/repos/github/piotrmurach/strings-ansi/badge.svg?branch=master)][coverage]
 [![Inline docs](http://inch-ci.org/github/piotrmurach/strings-ansi.svg?branch=master)][inchpages]
 
 [gem]: http://badge.fury.io/rb/strings-ansi
-[travis]: http://travis-ci.org/piotrmurach/strings-ansi
+[gh_actions_ci]: https://github.com/piotrmurach/strings-ansi/actions?query=workflow%3ACI
 [appveyor]: https://ci.appveyor.com/project/piotrmurach/strings-ansi
 [codeclimate]: https://codeclimate.com/github/piotrmurach/strings-ansi/maintainability
 [coverage]: https://coveralls.io/github/piotrmurach/strings-ansi?branch=master
