@@ -18,7 +18,26 @@ end
 require "bundler/setup"
 require "strings-ansi"
 
+module TestHelpers
+  module Paths
+    def gem_root
+      ::File.dirname(__dir__)
+    end
+
+    def dir_path(*args)
+      path = ::File.join(gem_root, *args)
+      FileUtils.mkdir_p(path) unless ::File.exist?(path)
+      ::File.realpath(path)
+    end
+
+    def fixtures_path(*args)
+      ::File.expand_path(::File.join(dir_path("spec/fixtures"), *args))
+    end
+  end
+end
+
 RSpec.configure do |config|
+  config.extend(TestHelpers::Paths)
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
 
