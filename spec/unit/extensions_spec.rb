@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'strings/ansi/extensions'
+require "strings/ansi/extensions"
 
 using Strings::ANSI::Extensions
 
@@ -14,6 +14,6 @@ RSpec.describe Strings::ANSI::Extensions do
   end
 
   it "strips ansi codes" do
-    expect("\e[33mfoo\e[0m".sanitize).to eq('foo')
+    expect("\e[33mfoo\e[0m".sanitize).to eq("foo")
   end
 end

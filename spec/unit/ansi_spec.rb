@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Strings::ANSI, '#ansi?' do
+RSpec.describe Strings::ANSI, "#ansi?" do
   it "does't report empty string" do
-    expect(Strings::ANSI.ansi?('')).to eq(false)
+    expect(Strings::ANSI.ansi?("")).to eq(false)
   end
 
   it "reports non-ansi string correctly" do
