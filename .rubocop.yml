@@ -1,6 +1,9 @@
 AllCops:
   NewCops: enable
 
+Layout/FirstArrayElementIndentation:
+  Enabled: false
+
 Layout/LineLength:
   Max: 80
 
@@ -35,6 +38,12 @@ Style/AccessorGrouping:
 Style/AsciiComments:
   Enabled: false
 
+Style/BlockDelimiters:
+  Enabled: false
+
+Style/CommentedKeyword:
+  Enabled: false
+
 Style/LambdaCall:
   EnforcedStyle: braces
 
@@ -45,11 +54,4 @@ Style/StringLiterals:
   EnforcedStyle: double_quotes
 
 Style/TrivialAccessors:
-  Enabled: false
-
-# { ... } for multi-line blocks is okay
-Style/BlockDelimiters:
-  Enabled: false
-
-Style/CommentedKeyword:
   Enabled: false
