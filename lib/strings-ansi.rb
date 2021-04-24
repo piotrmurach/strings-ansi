@@ -1,1 +1,1 @@
-require_relative 'strings/ansi'
+require_relative "strings/ansi"

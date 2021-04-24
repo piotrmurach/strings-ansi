@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'ansi/version'
+require_relative "ansi/version"
 
 module Strings
   # Helper functions for handling ANSI escape sequences
@@ -17,7 +17,7 @@ module Strings
       |
       # hyperlink opening sequence
       (?>\033\]8;[^;]*;.*?(\033\\|\07))
-    }x
+    }x.freeze
 
     # Return a copy of string with ANSI characters removed
     #
@@ -31,7 +31,7 @@ module Strings
     #
     # @api public
     def sanitize(string)
-      string.gsub(ANSI_MATCHER, '')
+      string.gsub(ANSI_MATCHER, "")
     end
     module_function :sanitize
 
