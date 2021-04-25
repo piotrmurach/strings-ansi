@@ -3,6 +3,7 @@
 ## [v0.3.0] - unreleased
 
 ### Added
+* Add support for the majority of the ECMA-48 & VT100 terminal controls
 * Add support for hyperlinks escape sequences ([@radarek])
 
 ## [v0.2.0] - 2019-11-12
@@ -18,6 +19,6 @@
 
 [@radarek]: https://github.com/radarek
 
-[v0.3.0]: https://github.com/piotrmurach/strings-ansi/compare/v0.1.0...v0.2.0
+[v0.3.0]: https://github.com/piotrmurach/strings-ansi/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/piotrmurach/strings-ansi/compare/v0.1.0...v0.2.0
 [v0.1.0]: https://github.com/piotrmurach/strings-ansi/compare/aa66ce8...v0.1.0

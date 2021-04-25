@@ -1,0 +1,194 @@
+---
+[
+  "\eA", # Cursor up
+  "\eB", # Cursor down
+  "\eC", # Cursor right
+  "\eD", # Cursor left
+  "\eF", # Special graphics character set
+  "\eG", # Select ASCII character set
+  "\eH", # Cursor to home
+  "\eI", # Reverse line feed
+  "\eJ", # Erase to end of screen
+  "\eK", # Erase to end of line
+  "\eZ", # Identify what the terminal is
+  "\e=", # Enter alternate keypad mode
+  "\e>", # Exit alternate keypad mode
+  "\e1", # Graphics processor on
+  "\e2", # Graphics processor off
+  "\e<", # Enter ANSI mode
+  # Movement
+  "\e[12A", # Cursor up 12 lines
+  "\e[12B", # Cursor down 12 lines
+  "\e[12C", # Cursor forward 12 characters (right)
+  "\e[12D", # Cursor backward 12 characters (left)
+  "\e[11;22H", # Direct cursor addressing, where 11 is line, 22 is column
+  "\e[11;22f", # Direct cursor addressing, where 11 is line, 22 is column
+  "\e F", # Send as 7-bit controls
+  "\e F", # Send as 7-bit controls
+  "\e L", # Set ANSI conformance level 1
+  "\e M", # Set ANSI conformance level 2
+  "\e N", # Set ANSI conformance level 3
+  "\eD",  # Index
+  "\eM",  # Reverse index
+  "\e6",  # Back Index, VT420 and up.
+  "\e7",  # Save cursor and attributes
+  "\e8",  # Restore cursor and attributes
+  "\e9",  # Forward Index, VT420 and up.
+  "\e#3", # Change this line to double-height top half
+  "\e#4", # Change this line to double-height bottom half
+  "\e#5", # Change this line to single-width single-height
+  "\e#6", # Change this line to double-width single-height
+  "\e[s", # Save current cursor position
+  "\e[u", # Restores cursor position
+  "\e[1 u", # Set margin-bell to be off
+  "\e[4 u", # Set margin-bell to low volume
+  "\e[8 u", # Set margin-bell to high volume
+  "\e[1;32;101m", # Set display attributes
+  "\e[0m", # All attributes off
+  "\e[1m", # Bold on
+  "\e[2m", # Turn low intensity mode on
+  "\e[4m", # Turn underline mode on
+  "\e[5m", # Turn blinking mode on
+  "\e[7m", # Turn reverse video on
+  "\e[8m", # Turn invisible text mode on
+  # Clearing
+  "\e[K",  # Erase from cursor to end of line
+  "\e[0K", # Erase from cursor to end of line
+  "\e[?0K", # Erase from cursor to end of line, VT220
+  "\e[1K", # Erase from beginning of line to cursor
+  "\e[2K", # Erase line containing cursor
+  "\e[J",  # Erase from cursor to end of screen
+  "\e[0J", # Erase from cursor to end of screen
+  "\e[2J", # Erase entire screen
+  "\e[1;2;3q", # Load programmable LEDs
+  # # Character sets
+  "\en",  # Invoke the G2 Character Set as GL
+  "\eo",  # Invoke the G3 Character Set as GL
+  "\e~",  # Invoke the G1 Character Set
+  "\e}",  # Invoke the G2 Character Set
+  "\e|",  # Invoke the G3 Character Set
+  "\e%@", # Select default character set
+  "\e%G", # Select UTF-8 character set
+  "\e(A", # Set United Kingdom G0 character set
+  "\e(B", # Set United States G0 character set
+  "\e(C", # Set Finnish G0 character set
+  "\e(E", # Set Norwegian/Danish G0 character set
+  "\e(H", # Set Swedish G0 character set
+  "\e(K", # Set German G0 character set
+  "\e(Q", # Set French Canadian G0 character set
+  "\e(f", # Set French G0 character set
+  "\e(%", # Set Hebrew G0 character set
+  "\e(=", # Set Swiss G0 character set
+  "\e(0", # Set G0 special chars. & line set
+  "\e(1", # Set G0 alternate character ROM
+  "\e(2", # Set G0 alt char ROM and spec. graphics
+  "\e)A", # Set United Kingdom G1 character set
+  "\e)B", # Set United States G1 character set
+  "\e)C", # Set Finnish G1 character set
+  "\e)E", # Set Norwegian/Danish G1 character set
+  "\e)H", # Set Swedish G1 character set
+  "\e)K", # Set German G1 character set
+  "\e)Q", # Set French Canadian G1 character set
+  "\e)f", # Set French G1 character set
+  "\e)%", # Set Hebrew G1 character set
+  "\e)=", # Set Swiss G1 character set
+  "\e)0", # Set G1 special chars. & line set
+  "\e)1", # Set G1 alternate character ROM
+  "\e)2", # Set G1 alt char ROM and spec. graphics
+  "\e*A", # Set United Kingdom G2 character set
+  "\e+A", # Set United Kingdom G3 character set
+  "\e-A", # Set United Kingdom G1 character set
+  "\e.A", # Set United Kingdom G2 character set
+  "\e/A", # Set United Kingdom G3 character set
+  "\eN",  # Set single shift 2
+  "\eH",   # Set tab at current column
+  "\e[g",  # Clear tab at current column
+  "\e[0g", # Clear a tab at the current column
+  "\e[3g", # Clear all tabs
+  # Modes
+  "\e[20h", # New line
+  "\e[?1h", # Cursor key Application
+  "\e[?3h", # Column mode 132 col
+  "\e[?4h", # Scrolling Smooth
+  "\e[?5h", # Screen mode Reverse
+  "\e[?6h", # Origin mode Relative
+  "\e[?7h", # Wraparound On
+  "\e[?8h", # Autorepeat On
+  "\e[?9h", # Interface On
+  "\e[20l", # Line feed
+  "\e[?1l", # Cursor key Cursor
+  "\e[?2l", # VT52
+  "\e[?3l", # Column mode 80 col
+  "\e[?4l", # Scrolling Jump
+  "\e[?5l", # Screen mode Normal
+  "\e[?6l", # Origin mode Absolute
+  "\e[?7l", # Wraparound Off
+  "\e[?8l", # Autorepeat Off
+  "\e[?9l", # Interface Off
+  "\e[?25h", # Make cursor visible
+  "\e[?25l", # Make cursor invisible
+  # Reports
+  "\e[6n",    # Cursor position report
+  "\e[1;2R",  # (response; 1=line; 2=column)
+  "\e[5n",    # Status report
+  "\e[>0n",   # Disable keyboard key modifiers
+  "\e[>1n",   # Disable cursor key modifiers
+  "\e[>2n",   # Disable function key modifiers
+  "\e[c",     # (response; terminal Ok)
+  "\e[0c",    # (response; teminal not Ok)
+  "\e[?1;2c", # response; where Ps is option present:]
+  "\ec",      # Causes power-up reset routine to be executed
+  "\e#8",     # Fill screen with "E"
+  "\e[2;1y",  # Confidence power up test
+  "\e[2;2y",  # Confidence loopback test
+  "\e[2;9y",  # Repeat power up test
+  "\e[2;10y", # Repeat loopback test
+  "\e[!p",    # Soft terminal reset, VT220 and up.
+  "\e[>0p",   # Set to never hide the pointer
+  "\e[>1p",   # Set to hide if the mouse tracking mode is not enabled
+  "\e[>2p",   # Set to always hide the pointer, except when leaving the window
+  "\e[>3p",   # Set to always hide the pointer
+  # Key editing
+  "\e[1~", # Home
+  "\e[2~", # Insert
+  "\e[3~", # Delete
+  "\e[4~", # End
+  "\e[5~", # PageUp
+  "\e[6~", # PageDown
+  # Special keys
+  "\eOP", # F1
+  "\eOQ", # F2
+  "\eOR", # F3
+  "\eOS", # F4
+  "\eOp", # Keypad 0
+  "\eOq", # Keypad 1
+  "\eOr", # Keypad 2
+  "\eOs", # Keypad 3
+  "\eOt", # Keypad 4
+  "\eOA", # Up arrow
+  "\eOB", # Down arrow
+  "\eOC", # Right arrow
+  "\eOD", # Left arrow
+  # Special keys URXVT
+  "\e[21~", # F0
+  "\e[11~", # F1
+  "\e[12~", # F2
+  "\e[13~", # F3
+  "\e[23$", # F21
+  "\e[11^", # F23
+  "\e[23@", # F43
+  # Special keys SGI consoles
+  "\e[@",  # F41
+  "\e[\\", # F43
+  "\e[]",  # F44
+  "\e[_",  # F46
+  "\e[{",  # F48
+  # Special keys XTerm
+  "\e[[A", # F1
+  "\e[[B", # F2
+  "\e[[C", # F3
+  "\e[[D", # F4
+  "\e[[E", # F5
+  "\e[15;2~", # F17
+  "\e[17;2~"  # F18
+]

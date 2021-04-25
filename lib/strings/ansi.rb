@@ -13,10 +13,19 @@ module Strings
 
     # The regex to match ANSI codes
     ANSI_MATCHER = %r{
-      (?>(\[)?\033(\[)?[;?\d]*[\dA-Za-z]([\];])?)
-      |
-      # hyperlink opening sequence
-      (?>\033\]8;[^;]*;.*?(\033\\|\07))
+      (?>\033(
+        \[[\[?>!]?\d*(;\d+)*[ ]?[a-zA-Z~@$^\]_\{\\] # graphics
+        |
+        \#?\d # cursor modes
+        |
+        [)(%+\-*/. ](\d|[a-zA-Z@=%]|) # character sets
+        |
+        O[p-xA-Z] # special keys
+        |
+        [a-zA-Z=><~\}|] # cursor movement
+        |
+        \]8;[^;]*;.*?(\033\\|\07) # hyperlink
+      ))
     }x.freeze
 
     # Return a copy of string with ANSI characters removed

@@ -1,19 +1,30 @@
 # frozen_string_literal: true
 
 RSpec.describe Strings::ANSI, "#sanitize" do
-  {
-    "\e[20h" => "",
-    "\e[?1h" => "",
-    "\e[20l" => "",
-    "\e[?9l" => "",
-    "\eO" => "",
-    "\e[m" => "",
-    "\e[0m" => "",
-    "\eA" => "",
-    "\e[0;33;49;3;9;4m\e[0m" => ""
-  }.each do |code, expected|
-    it "removes #{code.inspect} from string" do
-      expect(Strings::ANSI.sanitize(code)).to eq(expected)
+  context "when string contains VT100 escape codes" do
+    YAML.load_file(fixtures_path("ansi_codes.yaml")).each do |code|
+      it "removes #{code.inspect} from #{('ansi' + code + 'code').inspect}" do
+        expect(Strings::ANSI.sanitize("ansi#{code}code")).to eq("ansicode")
+        expect(Strings::ANSI.sanitize("ansi#{code}1234")).to eq("ansi1234")
+      end
+    end
+  end
+
+  context "when string contains display attributes" do
+    it "removes basic color codes" do
+      expect(Strings::ANSI.sanitize("\e[1;33;44;91mfoo\e[0m")).to eq("foo")
+    end
+
+    it "removes 256 color codes" do
+      expect(Strings::ANSI.sanitize("\e[38;5;255mfoo\e[0m")).to eq("foo")
+    end
+
+    it "removes 24-bit color codes" do
+      expect(Strings::ANSI.sanitize("\e[48;2;255;255;255mfoo\e[0m")).to eq("foo")
+    end
+
+    it "removes erasing codes" do
+      expect(Strings::ANSI.sanitize("\e[123Kfoo\e[0m")).to eq("foo")
     end
   end
 

@@ -17,6 +17,7 @@ end
 
 require "bundler/setup"
 require "strings-ansi"
+require "yaml"
 
 module TestHelpers
   module Paths
